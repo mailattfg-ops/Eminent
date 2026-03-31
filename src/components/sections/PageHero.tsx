@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SafeImage from "@/components/ui/SafeImage";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { companyDetails } from "@/data/company";
 
@@ -15,7 +15,7 @@ interface PageHeroProps {
 export default function PageHero({ 
     title, 
     subtitle, 
-    backgroundImage = "/Images/page_hero_clinical.png", 
+    backgroundImage = "/Images/page_hero_clinical.webp", 
     className 
 }: PageHeroProps) {
     return (
@@ -25,13 +25,12 @@ export default function PageHero({
         )}>
             {/* Full-Width Background Canvas */}
             <div className="absolute inset-0 z-0">
-                <SafeImage
-                    src={backgroundImage}
+                <Image
+                    src={backgroundImage || "/Images/fallback.webp"}
                     alt={title}
                     fill
                     priority
                     className="object-cover object-[center_40%] transition-transform duration-[3000ms] scale-105"
-                    fallbackIcon="stethoscope"
                 />
                 
                 {/* Cinema-Grade Overlays for Professional Depth */}
@@ -87,7 +86,7 @@ export default function PageHero({
             </div>
 
             {/* Subtle Texture Grain Overlay */}
-            <div className="absolute inset-0 z-30 pointer-events-none opacity-[0.05] bg-[url('/noise.png')] mix-blend-overlay" />
+            <div className="absolute inset-0 z-30 pointer-events-none opacity-[0.05] bg-[url('/Images/noise.webp')] mix-blend-overlay" />
             
             {/* Decorative Top/Bottom Hairlines */}
             <div className="absolute top-8 inset-x-8 md:inset-x-12 h-px bg-white/5 z-20" />

@@ -17,7 +17,7 @@ export default function AboutPageContent() {
             <PageHero
                 title="About Us"
                 subtitle="Dedicated to creating healthy smiles and confident patients across Tanur and Malappuram."
-                backgroundImage="/Images/about_clinical.png"
+                backgroundImage="/Images/about_clinical.webp"
             />
 
             {/* Doctor Profile */}
@@ -74,7 +74,7 @@ export default function AboutPageContent() {
                             transition={{ duration: 0.8 }}
                             className="relative"
                         >
-                            {/* Premium Frame for Image - Using SafeImage for future-proofing */}
+                            {/* Premium Frame for Image */}
                             <div className="aspect-[4/5] rounded-[4rem] bg-brand-navy overflow-hidden shadow-premium relative group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-40 z-10" />
                                 <div className="absolute inset-0 flex items-center justify-center p-12 text-center text-white z-20">

@@ -16,9 +16,9 @@ import {
     Wind,
     ArrowRight
 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import BookingModal from "@/components/ui/BookingModal";
-import SafeImage from "@/components/ui/SafeImage";
 
 const IconMap: Record<string, any> = {
     Stethoscope,
@@ -58,13 +58,12 @@ export default function ServiceCard({ title, description, iconName, imageUrl, in
             {/* Framed Image Section */}
             <div className="relative p-3 md:p-4 pb-0">
                 <div className="relative h-48 md:h-56 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-brand-navy">
-                    <SafeImage
-                        src={imageUrl}
+                    <Image
+                        src={imageUrl || "/Images/fallback.webp"}
                         alt={title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
-                        fallbackIcon="stethoscope"
                     />
                     {/* Artistic gradient light-leak */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/20 via-transparent to-brand-gold/10 opacity-60 group-hover:opacity-30 transition-opacity duration-700" />

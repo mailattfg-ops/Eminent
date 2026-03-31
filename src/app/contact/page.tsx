@@ -21,7 +21,7 @@ export default function ContactPage() {
             <PageHero
                 title="Contact Us"
                 subtitle="Book your appointment or send us an enquiry — we're here to help you smile better."
-                backgroundImage="/Images/contact_clinical.png"
+                backgroundImage="/Images/contact_clinical.webp"
             />
 
             <ContactSection />

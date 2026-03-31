@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SafeImage from "@/components/ui/SafeImage";
+import Image from "next/image";
 import BookingModal from "../ui/BookingModal";
 import { companyDetails } from "@/data/company";
 import { Phone, ArrowRight, MessageCircle, Star } from "lucide-react";
@@ -73,13 +73,12 @@ export default function Hero() {
                         transition={{ duration: 1.5, ease: "easeOut" }}
                         className="absolute inset-0 bg-brand-navy group"
                     >
-                        <SafeImage
-                            src="/Images/dental_hero_bg.png"
+                        <Image
+                            src="/Images/dental_hero_bg.webp"
                             alt="Eminent Dental Care Interior"
                             fill
                             priority
                             className="object-cover transition-transform duration-[3000ms] group-hover:scale-105"
-                            fallbackIcon="stethoscope"
                         />
                         
                         {/* Overlay with Gold Sheen */}
@@ -109,7 +108,7 @@ export default function Hero() {
             </div>
 
             {/* Subtle Texture Grain Overlay */}
-            <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay" />
+            <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.03] bg-[url('/Images/noise.webp')] mix-blend-overlay" />
             
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
         </section>

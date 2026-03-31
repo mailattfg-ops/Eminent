@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import SectionHeader from "@/components/common/SectionHeader";
 import { companyDetails } from "@/data/company";
-import SafeImage from "@/components/ui/SafeImage";
+import Image from "next/image";
 
 const mainFeatures = [
     {
@@ -20,7 +20,7 @@ const mainFeatures = [
         tagline: "100% Hygiene Guaranteed",
         desc: "We follow strict sterilization and hygiene protocols to ensure a completely safe environment for every patient.",
         points: ["Autoclave Sterilization", "Disposable Tools", "Clean Air Filtration"],
-        image: "/Images/teeth_cleaning.png",
+        image: "/Images/teeth_cleaning.webp",
         delay: 0
     },
     {
@@ -29,7 +29,7 @@ const mainFeatures = [
         tagline: "Comfort & Compassion",
         desc: "Our clinic is designed to be calm, welcoming, and stress-free — because we believe dental visits should never feel intimidating.",
         points: ["Pain-Free Techniques", "Sedation Options", "Follow-up Support"],
-        image: "/Images/dental_consultation.png",
+        image: "/Images/dental_consultation.webp",
         delay: 0.2
     }
 ];
@@ -118,12 +118,11 @@ export default function WhyChooseUs() {
                             {/* Feature Image/Visual */}
                             <div className="lg:w-1/2 w-full">
                                 <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-premium group">
-                                    <SafeImage
-                                        src={feature.image}
+                                    <Image
+                                        src={feature.image || "/Images/fallback.webp"}
                                         alt={feature.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-[1500ms]"
-                                        fallbackIcon="shield"
                                     />
                                     {/* Gold Accent Frame */}
                                     <div className="absolute inset-4 border border-white/20 rounded-[2.5rem] pointer-events-none" />

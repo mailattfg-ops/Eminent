@@ -32,8 +32,8 @@ export default function Navbar() {
                                 className="object-contain w-16 h-16 md:w-20 md:h-20"
                                 priority
                                 onError={(e) => {
-                                    // Fallback to Navbar.png if logo.png not found
-                                    (e.target as HTMLImageElement).src = "/Images/Navbar.png";
+                                    // Fallback to fallback.webp if logo.svg not found
+                                    (e.target as HTMLImageElement).src = "/Images/fallback.webp";
                                 }}
                             />
                         </Link>

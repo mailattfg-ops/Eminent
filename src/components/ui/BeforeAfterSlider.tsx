@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import SafeImage from "./SafeImage";
+import Image from "next/image";
 import { ArrowLeftRight } from "lucide-react";
 
 interface BeforeAfterSliderProps {
@@ -23,7 +23,7 @@ export default function BeforeAfterSlider({
         <div className="relative w-full h-full min-h-[350px] overflow-hidden group select-none">
             {/* After Image (Background) */}
             <div className="absolute inset-0">
-                <SafeImage src={afterImage} alt="After Treatment" fill className="object-cover pointer-events-none" priority />
+                <Image src={afterImage || "/Images/fallback.webp"} alt="After Treatment" fill className="object-cover pointer-events-none" priority />
             </div>
 
             {/* Before Image (Foreground overlay clipped) */}
@@ -31,7 +31,7 @@ export default function BeforeAfterSlider({
                 className="absolute inset-0 z-10"
                 style={{ clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)` }}
             >
-                <SafeImage src={beforeImage} alt="Before Treatment" fill className="object-cover pointer-events-none" priority />
+                <Image src={beforeImage || "/Images/fallback.webp"} alt="Before Treatment" fill className="object-cover pointer-events-none" priority />
             </div>
 
             {/* Slider Line & Handle */}

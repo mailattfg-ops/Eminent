@@ -10,18 +10,18 @@ import PageHero from "@/components/sections/PageHero";
 import ConsultationCTA from "@/components/sections/ConsultationCTA";
 
 const serviceImages: Record<number, string> = {
-    0: "/Images/dental_consultation.png",
-    1: "/Images/teeth_cleaning.png",
-    2: "/Images/composite_fillings.png",
-    3: "/Images/surgical_extraction.png",
-    4: "/Images/wisdom_tooth.png",
-    5: "/Images/after_smile.png",
-    6: "/Images/clear_aligners.png",
-    7: "/Images/dental_replacement.png",
-    8: "/Images/gum_treatment.png",
-    9: "/Images/frenectomy.png",
-    10: "/Images/pediatric_care.png",
-    11: "/Images/sensitivity_relief.png",
+    0: "/Images/dental_consultation.webp",
+    1: "/Images/teeth_cleaning.webp",
+    2: "/Images/composite_fillings.webp",
+    3: "/Images/surgical_extraction.webp",
+    4: "/Images/wisdom_tooth.webp",
+    5: "/Images/after_smile.webp",
+    6: "/Images/clear_aligners.webp",
+    7: "/Images/dental_replacement.webp",
+    8: "/Images/gum_treatment.webp",
+    9: "/Images/frenectomy.webp",
+    10: "/Images/pediatric_care.webp",
+    11: "/Images/sensitivity_relief.webp",
 };
 
 export default function ServicesPageContent() {
@@ -32,7 +32,7 @@ export default function ServicesPageContent() {
             <PageHero
                 title="Our Treatments"
                 subtitle="Comprehensive dental care for the whole family — from routine check-ups to advanced cosmetic procedures."
-                backgroundImage="/Images/modern_dental.png"
+                backgroundImage="/Images/modern_dental.webp"
             />
 
             {/* Services Grid */}

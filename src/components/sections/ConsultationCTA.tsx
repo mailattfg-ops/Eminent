@@ -15,8 +15,8 @@ export default function ConsultationCTA() {
                     {/* Visual Half - Interactive Before/After Slider */}
                     <div className="lg:w-[45%] relative min-h-[350px] lg:min-h-full overflow-hidden">
                         <BeforeAfterSlider 
-                            beforeImage="/Images/before_smile.png" 
-                            afterImage="/Images/after_smile.png" 
+                            beforeImage="/Images/before_smile.webp" 
+                            afterImage="/Images/after_smile.webp" 
                             beforeLabel="Before Treatment"
                             afterLabel="After Treatment"
                         />

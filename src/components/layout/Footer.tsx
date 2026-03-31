@@ -119,7 +119,7 @@ export default function Footer() {
                                     sizes="(max-width: 768px) 128px, 192px"
                                     className="object-contain object-left relative z-10"
                                     onError={(e) => {
-                                        (e.target as HTMLImageElement).src = "/Images/Navbar.png";
+                                        (e.target as HTMLImageElement).src = "/Images/fallback.webp";
                                     }}
                                 />
                             </div>

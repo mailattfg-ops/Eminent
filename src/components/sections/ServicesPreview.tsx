@@ -28,9 +28,9 @@ export default function ServicesPreview() {
                             description={service.description}
                             iconName={service.icon}
                             imageUrl={
-                                index === 0 ? "/Images/dental_consultation.png" :
-                                    index === 1 ? "/Images/teeth_cleaning.png" :
-                                        index === 2 ? "/Images/cosmetic_dentistry.png" : undefined
+                                index === 0 ? "/Images/dental_consultation.webp" :
+                                    index === 1 ? "/Images/teeth_cleaning.webp" :
+                                        index === 2 ? "/Images/cosmetic_dentistry.webp" : undefined
                             }
                         />
                     ))}
