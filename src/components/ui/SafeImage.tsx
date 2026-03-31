@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image, { ImageProps } from "next/image";
+import Image, { type ImageProps } from "next/image";
 import { cn } from "@/lib/utils";
 import { Stethoscope, Sparkles, Shield, Activity, Phone, Star } from "lucide-react";
 
-interface SafeImageProps extends Omit<ImageProps, "onError"> {
+interface SafeImageProps extends Omit<ImageProps, "src" | "onError"> {
+    src?: ImageProps["src"] | null;
     fallbackIcon?: "stethoscope" | "sparkles" | "shield" | "activity" | "phone" | "star";
 }
 
@@ -20,8 +21,11 @@ const iconMap = {
 
 export default function SafeImage({ src, alt, className, fallbackIcon = "stethoscope", ...props }: SafeImageProps) {
     // Defensive check for malformed or missing URLs to prevent Next.js construct URL crash
-    const isValidSrc = typeof src === 'string' && (src.startsWith('/') || src.startsWith('http') || src.startsWith('data:'));
-    const [error, setError] = useState(!isValidSrc);
+    const isStringSrc = typeof src === 'string';
+    const isValidSrc = isStringSrc && (src.startsWith('/') || src.startsWith('http') || src.startsWith('data:'));
+    const isStaticSrc = src && typeof src === 'object';
+    
+    const [error, setError] = useState(!isValidSrc && !isStaticSrc);
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -29,9 +33,9 @@ export default function SafeImage({ src, alt, className, fallbackIcon = "stethos
     }, []);
 
     const Icon = iconMap[fallbackIcon] || iconMap.stethoscope;
-    const resolvedSrc = typeof src === 'string' ? src : "";
+    const resolvedSrc = src || "";
 
-    if (error || !isValidSrc) {
+    if (error || (!isValidSrc && !isStaticSrc)) {
         return (
             <div 
                 className={cn(
@@ -57,7 +61,7 @@ export default function SafeImage({ src, alt, className, fallbackIcon = "stethos
     return (
         <Image
             {...props}
-            src={resolvedSrc}
+            src={resolvedSrc as ImageProps["src"]}
             alt={alt}
             className={className}
             onError={() => setError(true)}
