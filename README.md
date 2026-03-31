@@ -51,6 +51,4 @@ A premium, high-end clinical website for Eminent Dental Care, built with Next.js
 - **Location**: Parappanagadi Road, Tanur, Malappuram, Kerala
 - **Vision**: To be the most trusted dental care provider in the region — a clinic where patients feel safe, valued, and leave with better oral health and brighter smiles.
 
-## 📄 License
 
-This project is for demonstration purposes.
